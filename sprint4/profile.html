@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Profile</title>
+    </head>
+   <body>
+    <div style="display: flex; background-color: darkblue; height: 40px;">
+        <div style="color: white; margin-top: 10px; margin-left: 10px;">
+            TWITTER
+        </div>
+        <div style="color: gray; margin-left: 1650px; margin-top: 10px;">
+            Tweets
+            Fullname
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <br><br>
+    <form id="formRegis" style="margin-left: 40%;">
+        <label> EMAIL:</label>
+        <input type="text" id="email" style="width: 250px;">
+        <br><br>
+        <label> FULL NAME:</label>
+        <input type="text" id="fullname" style="width: 215px;">
+        <br><br>
+        <label> COUNTRY:</label>
+        <select id="country" style="width: 230px;">
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="USA">USA</option>
+            <option value="Russia">Russia</option>
+        </select>
+        <br><br>
+        <label>BIRTHDATE:</label>
+        <input type="date" id="birthdate" style="width: 220px;">
+        <br><br>
+    </form>
+   </body>
+   <script>
+    let profileUser = JSON.parse(localStorage.getItem('user'));
+
+    document.getElementById('email').value = profileUser.email;
+    document.getElementById('fullname').value = profileUser.fullname;
+    document.getElementById('country').value = profileUser.country;
+    document.getElementById('birthdate').value = profileUser.birthdate;
+
+    function logout(){
+        localStorage.removeItem('user');
+        window.open("http://127.0.0.1:5500/LocalStorage/SprintTask4/register.html");
+    }
+   </script>
+</html>

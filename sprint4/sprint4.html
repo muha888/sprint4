@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storage</title>
+    </head>
+
+    <body>
+    <a href="/sprint4/login.html">Login</a>
+    <br><br>
+    <a href = "#">Register</a>
+    <br><br>
+        <form id="register">
+            <label>Email</label>
+            <input type="text" id = "email">
+            
+            <br><br>
+            <label>Password</label>
+            <input type="password" id = "password">
+            <br><br>
+            
+            <label>Full Name</label>
+            <input type="text" id = "fullName">
+            <br><br>
+
+            <label>Country</label>
+            <select id="country">
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Spain">Spain</option>
+                <option value="Russia">Russia</option>
+                <option value="USA">USA</option>
+                <option value="China">China</option>
+            </select>
+            <br><br>
+            <label>BirthDate</label>
+            <input type="date" id = "BirthDate">
+            <br><br>
+            <button id = "register" style="background-color: darkblue; color: aliceblue;">REGISTER</button>
+        </form>
+
+        <script>
+            let users = [
+                {email: "miras@gmail.com", password: "12345", fullName: "Miras Ayash", country: "Kazakhstan", BirthDate:"1995-06-21"}
+                
+            ];
+
+            function registerUser(){
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('email').value;
+                const fullName = document.getElementById('email').value;
+                const country = document.getElementById('email').value;
+                const BirthDate = document.getElementById('email').value;
+
+                const user = {email: email, password: password, fullName: fullName, country:country, BirthDate:BirthDate};
+                console.log(user);
+
+                users.push(user);
+
+                localStorage.setItem('user')
+            }
+        </script>
+
+
+
+    </body>
+
+</html>

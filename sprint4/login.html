@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storage</title>
+    </head>
+
+    <body>
+    <a href="/sprint4/login.html">Login</a>
+    <br><br>
+    <a href = "/sprint4/sprint4.html">Register</a>
+    <br><br>
+        <form id="formRegister">
+            <label>Email</label>
+            <input type="text" id = "email">
+            
+            <br><br>
+            <label>Password</label>
+            <input type="password" id = "password">
+            <br><br>
+            
+            <button id = "register" style="background-color: darkblue; color: aliceblue;", onclick="loginUser">SIGN IN</button>
+        </form>
+
+        <script>
+            function loginUser(){
+                const registerEmail = document.getElementById('email').value;
+                const registerPassword = document.getElementById('password').value;
+
+                const users = JSON.parse(localStorage.getItem());
+                let count = 0;
+                for(let us of regisUsers){
+                    if(us.email === registerEmail && us.password === registerPassword){
+                        count++;
+                    } else{
+                        count = 0;
+                    }
+                };
+
+                if(count>0){
+                    alert('Вы можете зайти в свой аккаунт')
+                } else{
+                    alert('Пароль или емайл неправильно')
+                }
+
+                console.log(registerEmail + " " + registerPassword);
+                alert("We have register");
+
+
+            }
+        </script>
+
+        
+
+
+
+    </body>
+
+</html>
